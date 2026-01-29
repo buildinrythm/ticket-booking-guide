@@ -50,7 +50,6 @@ class Return(Transaction):
         total = self.calcTotal()
         print("\n=== Return Summary ===")
         print(f"Customer name: {self.custName}")
-        print(f"Event name:  {self.eventName}")
         print(f"Quantity: {self.quantity}")
         print(f"Price: {self.price}")
         print(f"Return date: {self.returnDate}")
@@ -80,6 +79,25 @@ def main():
         trans.printSummary()
     else:
         print("Invalid transaction type")
+
+# --- Unit Tests ---
+
+# Test 1: Sale total calculation (with 0.5% tax)
+sale_test = Sale("Alice", 10, 5, "Concert")  # 10*5 = 50, tax 0.5% = 0.25, total = 50.25
+assert abs(sale_test.calc_total() - 50.25) < 1e-6, "Sale total calculation failed"
+
+# Test 2: Sale summary prints (just check it runs)
+sale_test.print_summary()  # visually inspect output; ensures method runs without errors
+
+# Test 3: Return total calculation (no tax)
+return_test = Return("Bob", 20, 3, "2026-01-29")  # 20*3 = 60
+assert abs(return_test.calc_total() - 60) < 1e-6, "Return total calculation failed"
+
+# Test 4: Return summary prints
+return_test.print_summary()  # visually inspect output; ensures method runs without errors
+
+print("All tests passed successfully!")
+
 
 
     
