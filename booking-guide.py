@@ -83,18 +83,18 @@ def main():
 # --- Unit Tests ---
 
 # Test 1: Sale total calculation (with 0.5% tax)
-sale_test = Sale("Alice", 10, 5, "Concert")  # 10*5 = 50, tax 0.5% = 0.25, total = 50.25
-assert abs(sale_test.calc_total() - 50.25) < 1e-6, "Sale total calculation failed"
+saleTest = Sale("Alice", 10, 5, "Concert")  
+assert abs(saleTest.calcTotal() - 50.25) < 1e-6, "Sale total calculation failed"
 
 # Test 2: Sale summary prints (just check it runs)
-sale_test.print_summary()  # visually inspect output; ensures method runs without errors
+saleTest.printSummary()  
 
 # Test 3: Return total calculation (no tax)
-return_test = Return("Bob", 20, 3, "2026-01-29")  # 20*3 = 60
-assert abs(return_test.calc_total() - 60) < 1e-6, "Return total calculation failed"
+returnTest = Return("Bob", 20, 3, "2026-01-29")  # 20*3 = 60
+assert abs(returnTest.calcTotal() - 60) < 1e-6, "Return total calculation failed"
 
 # Test 4: Return summary prints
-return_test.print_summary()  # visually inspect output; ensures method runs without errors
+returnTest.printSummary()  
 
 print("All tests passed successfully!")
 
