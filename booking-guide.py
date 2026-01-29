@@ -59,7 +59,29 @@ class Return(Transaction):
 
 
 def main():
+    """Main program to handle transactions"""
+    print("=== TRANSACTION SYSTEM ===\n")
     
+    # Get transaction type and shared values
+    transType = input("Enter transaction type (1 = Sale, 2 = Return): ")
+    custName = input("Enter customer name: ")
+    price = float(input("Enter ticket price: "))
+    quantity = int(input("Enter quantity: "))
+
+
+    # Process based on transaction type
+    if transType == "1":
+        eventName = input("Enter event name: ")
+        trans = Sale(custName, price, quantity, eventName)
+        trans.printSummary()
+    elif transType == "2":
+        returnDate = input("Enter return date (YYYY-MM-DD): ")
+        trans = Return(custName, price, quantity, returnDate)
+        trans.printSummary()
+    else:
+    print("Invalid transaction type")
+
+
     
 
 
