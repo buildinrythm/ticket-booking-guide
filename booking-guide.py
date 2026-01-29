@@ -32,7 +32,7 @@ class Sale(Transaction):
         print(f"Event name:  {self.eventName}")
         print(f"Quantity: {self.quantity}")
         print(f"Price: {self.price}")
-        print(f"Total: {self.total:.2f}")
+        print(f"Total: {total:.2f}")
         print("============================\n")
     
 
@@ -54,7 +54,7 @@ class Return(Transaction):
         print(f"Quantity: {self.quantity}")
         print(f"Price: {self.price}")
         print(f"Return date: {self.returnDate}")
-        print(f"Total: {self.total:.2f}")
+        print(f"Total: {total:.2f}")
         print("============================\n")
 
 
@@ -79,7 +79,7 @@ def main():
         trans = Return(custName, price, quantity, returnDate)
         trans.printSummary()
     else:
-    print("Invalid transaction type")
+        print("Invalid transaction type")
 
 
     
